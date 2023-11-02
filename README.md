@@ -1,4 +1,3 @@
-# openinapp
 # Gmail Auto-Reply App
 
 An application for automating email replies when you're on vacation using Gmail's API.
