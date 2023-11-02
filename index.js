@@ -14,24 +14,27 @@ const {
   addLabel,
 } = require("./gmail.js");
 
-
 // Serve the CSS file
 app.use("/styles.css", express.static(path.join(__dirname, "styles.css")));
 
-
+// Route for Gmail authentication
 app.get("/authenticate", async (req, res) => {
   const credentials = await fs.readFile("credentials.json");
 
+  // Authenticate with Gmail API
   const auth = await gmail_auth();
   const gmail = login(auth);
 
+  // Get a list of Gmail labels
   const response = await getLabelsList(gmail);
   const LABEL_NAME = "vacation";
 
   async function main() {
+    // Create or get the "vacation" label
     const labelId = await createlabel(auth, LABEL_NAME);
     console.log(`created a label id with id ${labelId}`);
 
+    // Periodically check for unreplied messages and apply labels
     setInterval(async () => {
       const messages = await getUnrepliedMessages(auth);
       console.log(`found ${messages.length} unreplied messages`);
@@ -51,7 +54,7 @@ app.get("/authenticate", async (req, res) => {
   res.send("You have successfully subscribed for our service");
 });
 
-
+// Root route
 app.get("/", (req, res) => {
   res.send(`
     <html>
@@ -71,11 +74,12 @@ app.get("/", (req, res) => {
   `);
 });
 
-
+// Route for redirection
 app.get("/redirect", (req, res) => {
   res.send("Done!!!!!!!");
 });
 
+// Start the Express server
 app.listen(port, () => {
   console.log(`Example is running in ${port}`);
 });

@@ -1,37 +1,40 @@
-/* styles.css */
+/* Define global styling for the entire page */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+  font-family: Arial, sans-serif; /* Set the font family for text */
+  text-align: center; /* Center-align text */
+  background-color: #f2f2f2; /* Set the background color */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Create a container with specific styling */
+.container {
+  max-width: 600px; /* Set the maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding inside the container */
+  background-color: #fff; /* Set the background color of the container */
+  border-radius: 5px; /* Apply rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Style the heading (h1) element */
+h1 {
+  color: #333; /* Set text color */
+}
+
+/* Style buttons */
+button {
+  background-color: #007BFF; /* Set the background color of the button */
+  color: #fff; /* Set text color */
+  padding: 10px 20px; /* Add padding inside the button */
+  border: none; /* Remove the button border */
+  border-radius: 5px; /* Apply rounded corners */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+  font-size: 16px; /* Set the font size */
+  transition: background-color 0.3s; /* Add a smooth color transition effect */
+}
+
+/* Define button hover state */
+button:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}
